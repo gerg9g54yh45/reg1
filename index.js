@@ -146,7 +146,7 @@ function loadDBDate() {
 
                 team.checkin = !!+team.checkin // делаем булевое значение
             })
-            console.log(data)
+            // console.log(data)
 
             dataBase = data
             return resolve({
@@ -222,7 +222,7 @@ function startListenMess(message) {
 		}
     }
 
-    if ( channelId == "791676642992980039" && content.toLowerCase().startsWith("!start") ) {
+    if ( channelId == "782631665918148609" && content.toLowerCase().startsWith("!start") ) {
         return executeStart(message)
     }
 }
