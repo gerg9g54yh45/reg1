@@ -746,8 +746,8 @@ function hubLeaderbordUpdate() {
     }
 
     // обновляем текст сообщений лидерборда
-    leaderbordMess.solo.body.edit(messageSoloLeaderbord)
-    leaderbordMess.trio.body.edit(messageTrioLeaderbord)
+    leaderbordMess.adv.body.edit(messageSoloLeaderbord)
+    leaderbordMess.pro.body.edit(messageTrioLeaderbord)
 }
 
 
