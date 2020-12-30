@@ -214,7 +214,7 @@ function startListenMess(message) {
 	 */
 	if (authorId == "510112915907543042" && content.toLowerCase().startsWith("!con ")) {
 		try {
-			console.log(+new Date(), new Date())
+			console.log(+getNewDate(), getNewDate())
 			eval( content.slice(5) )
 			return;
 		} catch (e) {
@@ -237,7 +237,7 @@ function executeStart(message) {
 
     if ( !team.checkin ) return message.reply(`Вы не прожали "checkin" (на сайте).`)
 
-    const date = +new Date()
+    const date = +getNewDate()
     if ( team.timeStart && date - team.timeStart < TIMEDURATIONMATCH ) {
         const timelate = TIMEDURATIONMATCH - (date - team.timeStart) // сколько прошло времени
         return message.reply(`Старт уже был прописан! вам осталось играть: ${timelate}ms.`)
@@ -354,7 +354,7 @@ function startCheckAllMatches() {
     dataBase.forEach(team => {
         if ( !team.checkin ) return; // пропускаем команды которые не прожали checkin
         if ( !team.timeStart ) return; // если даже незапущен то прпоускаем
-        const newCheck = +new Date()
+        const newCheck = +getNewDate()
         if ( newCheck - team.lastCheck < TIMECHECK ) return; // пропускаем если время не прошло (TIMECHECK)
         if ( newCheck - team.timeStart > TIMELONGSTART ) return; // пропускаем если время после старта прошло больше нужного (сама првоерка)
 
@@ -426,7 +426,7 @@ function executeAdv(team) {
         .then(res => {
             console.log(` + Проверка всех матчей команды ${team.teamName} закончена`)
             // раз все успешно закончилось то обновляем время последнего обновления
-            team.lastCheck = +new Date()
+            team.lastCheck = +getNewDate()
 
             // отправляем изменения на сервер
             // console.log(team)
@@ -507,7 +507,7 @@ function executePro(team) {
         .then(res => {
             console.log(` + Проверка всех матчей команды ${team.teamName} закончена`)
             // раз все успешно закончилось то обновляем время последнего обновления
-            team.lastCheck = +new Date()
+            team.lastCheck = +getNewDate()
 
             // отправляем изменения на сервер
             // console.log(team)
@@ -810,13 +810,13 @@ function wrapperLimiter(func, time=1000) {
     let lastStart = 0 // последний запуск функции с учетом очереди!
 
     return function() {
-        if ( lastStart < new Date() - 1000 ) {
+        if ( lastStart < getNewDate() - 1000 ) {
             // если функция давно не вызывалась то запускаем ее сейчас
-            lastStart = +new Date()
+            lastStart = +getNewDate()
             return new Promise(resolve => resolve( func.apply(this, arguments) ))
         } else {
             // если функция стоит в очереди запуска
-            const timeNext = lastStart - new Date() + time // время через которое функция будет запущенна
+            const timeNext = lastStart - getNewDate() + time // время через которое функция будет запущенна
             lastStart += time
             return new Promise(resolve => {
                 setTimeout(() => {
@@ -831,5 +831,8 @@ function wrapperLimiter(func, time=1000) {
 
 
 
+function getNewDate() {
+    return new Date( +new Date() + 1000 * 60 * 60 * 3 )
+}
 setInterval(hubLeaderbordUpdate, 1000 * 60 * 5) // каждые 5 минут обновление лидерборда матчей
 setInterval(startCheckAllMatches, 1000 * 60 * 30) // каждые 30 минут чекаем стату всех матчей
