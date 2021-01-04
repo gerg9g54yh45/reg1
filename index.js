@@ -22,14 +22,14 @@
 let dataBase = {} // тут будет данные с БД
 const leaderbordMess = {
     adv: {
-        chId: "782625124577837076", // 782532677671976962
-        id: "782625344795574303", // 782533035119607819
+        chId: "785476841807806494", // 782532677671976962
+        id: "795542642971901973", // 782533035119607819
         body: null, // само сообщение
         data: null // текст сообщения
     },
     pro: {
-        chId: "782625146992721930", // 782532710975537173
-        id: "782625354145333278", // 782533046356148225
+        chId: "785476940957483008", // 782532710975537173
+        id: "795542838434725970", // 782533046356148225
         body: null, // само сообщение
         data: null // текст сообщения
     }
@@ -74,18 +74,18 @@ API.login(config.apiLogin, config.apiKey)
         client.on("ready", () => {
             console.log(` + Бот запущен!`)
 
-            // loadLeaderbordMessage() // загружает сообщение лидербода в память
-            // .then(res => {
+            loadLeaderbordMessage() // загружает сообщение лидербода в память
+            .then(res => {
                 if ( !res.status ) return showLogErr(res.e, res.err_msg)
 
                 client.user.setActivity('HUB', { type: 'WATCHING' })
                 client.user.setStatus('online')
                 client.on("message", startListenMess) // запускаем прослушку сообщений
                 // startCheckAllMatches()
-            // })
-            // .catch(e => {
-            //     showLogErr(e, "Ошибка загрузки сообщения лидерборда")
-            // })
+            })
+            .catch(e => {
+                showLogErr(e, "Ошибка загрузки сообщения лидерборда")
+            })
         })
     })
     .catch(e => {
