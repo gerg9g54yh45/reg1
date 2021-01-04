@@ -685,8 +685,8 @@ function getTeamOnMatch(allPlayers, teamActi) {
 
 function getSumKills(team) {
     return team.matches.reduce((sum, match) => {
-        return +match.kills + sum + +team.bonus
-    }, 0)
+        return +match.kills + sum
+    }, 0) + +team.bonus
 }
 
 // обновляет лидерборды соло и трио суммируя все очки
