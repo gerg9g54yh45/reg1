@@ -40,7 +40,7 @@ const leaderbordMess = {
 const Config = require('./configs.js')
 const config = Config.exports || Config
 const TIMELENGTH = 1000 * 60 * 60 * 24 * 1 // 7 дней - длительность хаба
-const TIMESTART = 1609761600000 // старт (15:00)
+const TIMESTART = 1609750800000 // старт (12:00)
 // const TIMECHECK = 1000 * 60 * 60 * 2 // 2 часа - как часто проверять команду (историю)
 const TIMECHECK = 1000 * 60 * 15
 const TIMEDURATIONMATCH = 1000 * 60 * 60 * 3 // время длительности старта без погрешности (для самих матчей)
@@ -222,7 +222,7 @@ function startListenMess(message) {
 		}
     }
 
-    if ( channelId == "782631665918148609" && content.toLowerCase().startsWith("!start") ) {
+    if ( channelId == "768390652559360000" && content.toLowerCase().startsWith("!start") ) {
         return executeStart(message)
     }
 }
