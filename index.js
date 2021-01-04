@@ -360,8 +360,8 @@ function startCheckAllMatches() {
 
         // console.log(team, "прошло")
         // иначе получаем историю матчей запустив нужную функцию
-        if ( team.division == "HCL Advanced division" && team.teamActi.length == 1 ) return executeAdv(team)
-        if ( team.division == "HCL Pro division" && team.teamActi.length == 3 ) return executePro(team)
+        if ( team.division == "HCL Advanced division" ) return executeAdv(team)
+        if ( team.division == "HCL Pro division" ) return executePro(team)
         return showLogErr(team, `division не определен: ${team.division}`)
     })
 }
