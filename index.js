@@ -316,7 +316,7 @@ function addRoleUsers(message, rolename) {
 
 // поулчает id роли по имени
 function getIdRole(rolename) {
-    const guild = client.guilds.cache.get("736895944410398801") // 505374650730283008
+    const guild = client.guilds.cache.get("768390157400670209") // 505374650730283008
     const roles = guild.roles
     // console.log(roles)
     const roleFind = roles.cache.filter(role => role.name == rolename)
@@ -834,5 +834,5 @@ function wrapperLimiter(func, time=1000) {
 function getNewDate() {
     return new Date( +new Date() + 1000 * 60 * 60 * 3 )
 }
-// setInterval(hubLeaderbordUpdate, 1000 * 60 * 5) // каждые 5 минут обновление лидерборда матчей
-// setInterval(startCheckAllMatches, 1000 * 60 * 30) // каждые 30 минут чекаем стату всех матчей
+setInterval(hubLeaderbordUpdate, 1000 * 60 * 5) // каждые 5 минут обновление лидерборда матчей
+setInterval(startCheckAllMatches, 1000 * 60 * 30) // каждые 30 минут чекаем стату всех матчей
