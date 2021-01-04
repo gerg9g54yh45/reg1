@@ -74,18 +74,18 @@ API.login(config.apiLogin, config.apiKey)
         client.on("ready", () => {
             console.log(` + Бот запущен!`)
 
-            loadLeaderbordMessage() // загружает сообщение лидербода в память
-            .then(res => {
+            // loadLeaderbordMessage() // загружает сообщение лидербода в память
+            // .then(res => {
                 if ( !res.status ) return showLogErr(res.e, res.err_msg)
 
                 client.user.setActivity('HUB', { type: 'WATCHING' })
                 client.user.setStatus('online')
                 client.on("message", startListenMess) // запускаем прослушку сообщений
                 // startCheckAllMatches()
-            })
-            .catch(e => {
-                showLogErr(e, "Ошибка загрузки сообщения лидерборда")
-            })
+            // })
+            // .catch(e => {
+            //     showLogErr(e, "Ошибка загрузки сообщения лидерборда")
+            // })
         })
     })
     .catch(e => {
@@ -834,5 +834,5 @@ function wrapperLimiter(func, time=1000) {
 function getNewDate() {
     return new Date( +new Date() + 1000 * 60 * 60 * 3 )
 }
-setInterval(hubLeaderbordUpdate, 1000 * 60 * 5) // каждые 5 минут обновление лидерборда матчей
-setInterval(startCheckAllMatches, 1000 * 60 * 30) // каждые 30 минут чекаем стату всех матчей
+// setInterval(hubLeaderbordUpdate, 1000 * 60 * 5) // каждые 5 минут обновление лидерборда матчей
+// setInterval(startCheckAllMatches, 1000 * 60 * 30) // каждые 30 минут чекаем стату всех матчей
