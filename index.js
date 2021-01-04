@@ -381,7 +381,7 @@ function executeAdv(team) {
         // фильтруем историю матчей
         // console.log(`DO: ----------------------`)
         // console.log(matches)
-        matches.filterMatches(team.matches, "br_brtrios", team.timeStart)
+        matches.filterMatches(team.matches, "br_brtrios", team.timeStart - 1000 * 60 * 60 * 3)
         // console.log(`POSLE: ----------------------`)
         // console.log(matches)
         // console.log(`\n\n\n`)
@@ -462,7 +462,7 @@ function executePro(team) {
         // фильтруем историю матчей
         // console.log(`DO: ----------------------`)
         // console.log(matches)
-        matches.filterMatches(team.matches, "br_brtrios", team.timeStart)
+        matches.filterMatches(team.matches, "br_brtrios", team.timeStart - 1000 * 60 * 60 * 3)
         // console.log(`POSLE: ----------------------`)
         // console.log(matches)
         // console.log(`\n\n\n`)
