@@ -724,7 +724,7 @@ function hubLeaderbordUpdate() {
         const roleId = getIdRole(team.teamName)
         const text = roleId ? `<@&${roleId}>` : team.teamName
 
-        const sumKills = team.matches.reduce((sum, match) => {return +match.kills + sum}, 0)
+        const sumKills = team.matches.reduce((sum, match) => {return +match.kills + sum}, 0) + +team.bonus
 
         messageSoloLeaderbord.embed.description += `\n${i+1}. ${text} - ${sumKills}`
     }
@@ -741,7 +741,7 @@ function hubLeaderbordUpdate() {
         const roleId = getIdRole(team.teamName)
         const text = roleId ? `<@&${roleId}>` : team.teamName
 
-        const sumKills = team.matches.reduce((sum, match) => {return +match.kills + sum}, 0)
+        const sumKills = team.matches.reduce((sum, match) => {return +match.kills + sum}, 0) + +team.bonus
 
         messageTrioLeaderbord.embed.description += `\n${i+1}. ${text} - ${sumKills}`
     }
