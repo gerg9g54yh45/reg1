@@ -748,7 +748,7 @@ function hubLeaderbordUpdate() {
 
     // обновляем текст сообщений лидерборда
     // leaderbordMess.adv.body.edit(messageSoloLeaderbord)
-    leaderbordMess.pro.body.edit(messageTrioLeaderbord)
+    // leaderbordMess.pro.body.edit(messageTrioLeaderbord)
 }
 
 
@@ -835,5 +835,5 @@ function wrapperLimiter(func, time=1000) {
 function getNewDate() {
     return new Date( +new Date() + 1000 * 60 * 60 * 3 )
 }
-setInterval(hubLeaderbordUpdate, 1000 * 60 * 5) // каждые 5 минут обновление лидерборда матчей
-setInterval(startCheckAllMatches, 1000 * 60 * 30) // каждые 30 минут чекаем стату всех матчей
+// setInterval(hubLeaderbordUpdate, 1000 * 60 * 5) // каждые 5 минут обновление лидерборда матчей
+// setInterval(startCheckAllMatches, 1000 * 60 * 30) // каждые 30 минут чекаем стату всех матчей
