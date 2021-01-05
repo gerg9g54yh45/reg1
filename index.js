@@ -40,7 +40,7 @@ const leaderbordMess = {
 const Config = require('./configs.js')
 const config = Config.exports || Config
 const TIMELENGTH = 1000 * 60 * 60 * 11 // 7 дней - длительность хаба
-const TIMESTART = 1609750800000 // старт (12:00)
+const TIMESTART = 1609837200000 // старт (12:00)
 // const TIMECHECK = 1000 * 60 * 60 * 2 // 2 часа - как часто проверять команду (историю)
 const TIMECHECK = 1000 * 60 * 15
 const TIMEDURATIONMATCH = 1000 * 60 * 60 * 3 // время длительности старта без погрешности (для самих матчей)
@@ -747,7 +747,7 @@ function hubLeaderbordUpdate() {
     }
 
     // обновляем текст сообщений лидерборда
-    leaderbordMess.adv.body.edit(messageSoloLeaderbord)
+    // leaderbordMess.adv.body.edit(messageSoloLeaderbord)
     leaderbordMess.pro.body.edit(messageTrioLeaderbord)
 }
 
