@@ -684,9 +684,12 @@ function getTeamOnMatch(allPlayers, teamActi) {
 
 
 function getSumKills(team) {
-    return team.matches.reduce((sum, match) => {
+    const kk = team.matches.reduce((sum, match) => {
         return +match.kills + sum
     }, 0) + +team.bonus
+
+    console.log(`${team.name}; ${team.ownerId}; ${kk}`)
+    return kk
 }
 
 // обновляет лидерборды соло и трио суммируя все очки
@@ -710,7 +713,7 @@ function hubLeaderbordUpdate() {
     trioFullTeam.sort((teamA, teamB) => {
         return getSumKills(teamB) - getSumKills(teamA)
     })
-    console.log(trioFullTeam)
+    // console.log(trioFullTeam)
 
     // формируем текст из массивов
     let messageSoloLeaderbord = {
