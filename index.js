@@ -39,7 +39,7 @@ const leaderbordMess = {
 
 const Config = require('./configs.js')
 const config = Config.exports || Config
-const TIMELENGTH = 1000 * 60 * 60 * 9 // 7 часов - длительность хаба
+const TIMELENGTH = 1000 * 60 * 60 * 11 // 7 часов - длительность хаба
 const TIMESTART = 1610107200000 // старт (15:00)
 // const TIMECHECK = 1000 * 60 * 60 * 2 // 2 часа - как часто проверять команду (историю)
 const TIMECHECK = 1000 * 60 * 15
