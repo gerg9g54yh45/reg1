@@ -249,6 +249,7 @@ function executeStart(message) {
         return message.reply(`Старт уже был прописан! вам осталось играть: ${timelate}ms.`)
     }
 
+    return message.reply(`Время для старта уже вышло.`)
     team.timeStart = date
     // отправляем изменения на сервер
     sendTeamUpdates(team)
