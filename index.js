@@ -699,8 +699,8 @@ function hubLeaderbordUpdate() {
         if ( team.division == "HCL Pro division" ) return trioFullTeam.push(team)
     })
 
-    if ( soloFullTeam.length > 30 ) soloFullTeam.length = 30 // ограничение на вывод 30 команд
-    if ( trioFullTeam.length > 30 ) trioFullTeam.length = 30 // ограничение на вывод 30 команд
+    if ( soloFullTeam.length > 40 ) soloFullTeam.length = 40 // ограничение на вывод 30 команд
+    if ( trioFullTeam.length > 40 ) trioFullTeam.length = 40 // ограничение на вывод 30 команд
 
     // сортируем команды по очкам
     soloFullTeam.sort((teamA, teamB) => {
