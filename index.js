@@ -238,6 +238,12 @@ function executeStart(message) {
     if ( !team.checkin ) return message.reply(`Вы не прожали "checkin" (на сайте).`)
 
     const date = +getNewDate()
+    if ( team.timeStart ) {
+        let timelate = TIMEDURATIONMATCH - (date - team.timeStart) // сколько прошло времени
+        if ( timelate < 0 ) return message.reply(`Ваше время вышло.`)
+        return message.reply(`Старт уже был прописан! вам осталось играть: ${timelate}ms.`)
+    }
+
     if ( team.timeStart && date - team.timeStart < TIMEDURATIONMATCH ) {
         const timelate = TIMEDURATIONMATCH - (date - team.timeStart) // сколько прошло времени
         return message.reply(`Старт уже был прописан! вам осталось играть: ${timelate}ms.`)
