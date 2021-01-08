@@ -697,7 +697,7 @@ function hubLeaderbordUpdate() {
     const soloFullTeam = [],
         trioFullTeam = []
     dataBase.forEach(team => { // добавляем полностью созданные тимы в массивы
-        if ( team.division == "HCL Advanced division" ) return soloFullTeam.push(team)
+        // if ( team.division == "HCL Advanced division" ) return soloFullTeam.push(team)
         // if ( team.division == "HCL Advanced division" && team.teamActi.length == 1 ) return soloFullTeam.push(team)
         if ( team.division == "HCL Pro division" ) return trioFullTeam.push(team)
     })
