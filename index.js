@@ -710,13 +710,14 @@ function hubLeaderbordUpdate() {
     trioFullTeam.sort((teamA, teamB) => {
         return getSumKills(teamB) - getSumKills(teamA)
     })
+    console.log(trioFullTeam)
 
     // формируем текст из массивов
     let messageSoloLeaderbord = {
         embed: {
             title: `HCL Advanced division`,
             color: 15170518,
-            description: `**Топ 30 команд:**\n`
+            description: `**Топ 40 команд:**\n`
         }
     }
     for (let i = 0; i < soloFullTeam.length; i++) {
@@ -733,7 +734,7 @@ function hubLeaderbordUpdate() {
         embed: {
             title: `HCL Pro division`,
             color: 15170518,
-            description: `**Топ 30 команд:**\n`
+            description: `**Топ 40 команд:**\n`
         }
     }
     for (let i = 0; i < trioFullTeam.length; i++) {
