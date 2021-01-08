@@ -702,13 +702,13 @@ function hubLeaderbordUpdate() {
         if ( team.division == "HCL Pro division" ) return trioFullTeam.push(team)
     })
 
-    if ( soloFullTeam.length > 40 ) soloFullTeam.length = 40 // ограничение на вывод 30 команд
+    // if ( soloFullTeam.length > 40 ) soloFullTeam.length = 40 // ограничение на вывод 30 команд
     if ( trioFullTeam.length > 40 ) trioFullTeam.length = 40 // ограничение на вывод 30 команд
 
     // сортируем команды по очкам
-    soloFullTeam.sort((teamA, teamB) => {
-        return getSumKills(teamB) - getSumKills(teamA)
-    })
+    // soloFullTeam.sort((teamA, teamB) => {
+    //     return getSumKills(teamB) - getSumKills(teamA)
+    // })
 
     trioFullTeam.sort((teamA, teamB) => {
         return getSumKills(teamB) - getSumKills(teamA)
@@ -716,22 +716,22 @@ function hubLeaderbordUpdate() {
     // console.log(trioFullTeam)
 
     // формируем текст из массивов
-    let messageSoloLeaderbord = {
-        embed: {
-            title: `HCL Advanced division`,
-            color: 15170518,
-            description: `**Топ 40 команд:**\n`
-        }
-    }
-    for (let i = 0; i < soloFullTeam.length; i++) {
-        const team = soloFullTeam[i]
-        const roleId = getIdRole(team.teamName)
-        const text = roleId ? `<@&${roleId}>` : team.teamName
+    // let messageSoloLeaderbord = {
+    //     embed: {
+    //         title: `HCL Advanced division`,
+    //         color: 15170518,
+    //         description: `**Топ 40 команд:**\n`
+    //     }
+    // }
+    // for (let i = 0; i < soloFullTeam.length; i++) {
+    //     const team = soloFullTeam[i]
+    //     const roleId = getIdRole(team.teamName)
+    //     const text = roleId ? `<@&${roleId}>` : team.teamName
 
-        const sumKills = team.matches.reduce((sum, match) => {return +match.kills + sum}, 0) + +team.bonus
+    //     const sumKills = team.matches.reduce((sum, match) => {return +match.kills + sum}, 0) + +team.bonus
 
-        messageSoloLeaderbord.embed.description += `\n${i+1}. ${text} - ${sumKills}`
-    }
+    //     messageSoloLeaderbord.embed.description += `\n${i+1}. ${text} - ${sumKills}`
+    // }
 
     let messageTrioLeaderbord = {
         embed: {
