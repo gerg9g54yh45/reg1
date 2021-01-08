@@ -703,9 +703,6 @@ function hubLeaderbordUpdate() {
         if ( team.division == "HCL Pro division" ) return trioFullTeam.push(team)
     })
 
-    // if ( soloFullTeam.length > 40 ) soloFullTeam.length = 40 // ограничение на вывод 30 команд
-    if ( trioFullTeam.length > 40 ) trioFullTeam.length = 40 // ограничение на вывод 30 команд
-
     // сортируем команды по очкам
     // soloFullTeam.sort((teamA, teamB) => {
     //     return getSumKills(teamB) - getSumKills(teamA)
@@ -714,6 +711,10 @@ function hubLeaderbordUpdate() {
     trioFullTeam.sort((teamA, teamB) => {
         return getSumKills(teamB) - getSumKills(teamA)
     })
+
+    // if ( soloFullTeam.length > 40 ) soloFullTeam.length = 40 // ограничение на вывод 30 команд
+    if ( trioFullTeam.length > 40 ) trioFullTeam.length = 40 // ограничение на вывод 30 команд
+
     // console.log(trioFullTeam)
 
     // формируем текст из массивов
