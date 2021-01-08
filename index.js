@@ -688,7 +688,7 @@ function getSumKills(team) {
         return +match.kills + sum
     }, 0) + +team.bonus
 
-    console.log(`${team.name}; ${team.ownerId}; ${kk}`)
+    console.log(`${team.teamName}; ${team.ownerId}; ${kk}`)
     return kk
 }
 
