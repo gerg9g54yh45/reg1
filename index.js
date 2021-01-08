@@ -688,7 +688,7 @@ function getSumKills(team) {
         return +match.kills + sum
     }, 0) + +team.bonus
 
-    console.log(`${team.teamName}; ${team.ownerId}; ${kk}`)
+    // console.log(`${team.teamName}; ${team.ownerId}; ${kk}`)
     return kk
 }
 
@@ -697,6 +697,7 @@ function hubLeaderbordUpdate() {
     const soloFullTeam = [],
         trioFullTeam = []
     dataBase.forEach(team => { // добавляем полностью созданные тимы в массивы
+        console.log(`${team.teamName}; ${team.ownerId}; ${team.division == "HCL Pro division"}`)
         // if ( team.division == "HCL Advanced division" ) return soloFullTeam.push(team)
         // if ( team.division == "HCL Advanced division" && team.teamActi.length == 1 ) return soloFullTeam.push(team)
         if ( team.division == "HCL Pro division" ) return trioFullTeam.push(team)
