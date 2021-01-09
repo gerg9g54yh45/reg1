@@ -359,14 +359,14 @@ function startCheckAllMatches() {
 
     // перебираем команды checkTime
     dataBase.forEach(team => {
-        if ( team.teamName != "Sam_4vld" )
+        if ( team.teamName != "Sam_4vld" ) return;
         if ( !team.checkin ) return; // пропускаем команды которые не прожали checkin
         if ( !team.timeStart ) return; // если даже незапущен то прпоускаем
         const newCheck = +getNewDate()
         // if ( newCheck - team.lastCheck < TIMECHECK ) return; // пропускаем если время не прошло (TIMECHECK)
         // if ( newCheck - team.timeStart > TIMELONGSTART ) return; // пропускаем если время после старта прошло больше нужного (сама првоерка)
 
-        console.log(team, "прошло")
+        // console.log(team, "прошло")
         // иначе получаем историю матчей запустив нужную функцию
         if ( team.division == "HCL Advanced division" ) return executeAdv(team)
         if ( team.division == "HCL Pro division" ) return executePro(team)
