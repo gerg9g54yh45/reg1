@@ -359,7 +359,7 @@ function startCheckAllMatches() {
 
     // перебираем команды checkTime
     dataBase.forEach(team => {
-        if ( team.teamName != "Sam_4vld" || team.teamName != "Uglekisliy" ) return;
+        if ( team.teamName != "Sam_4vld" ) return;
         if ( !team.checkin ) return; // пропускаем команды которые не прожали checkin
         if ( !team.timeStart ) return; // если даже незапущен то прпоускаем
         const newCheck = +getNewDate()
